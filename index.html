@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hillel Rice Purity Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #ffffff;
+      color: #000;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    ol {
+      columns: 1;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #score {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Hillel Rice Purity Test</h1>
+<h2>Check every item you have done</h2>
+
+<ol id="questions">
+  <li><input type="checkbox"> Attended a Hillel event just for the food</li>
+  <li><input type="checkbox"> Took leftovers home in napkins or Tupperware</li>
+  <li><input type="checkbox"> Came late to Shabbat and still ate</li>
+  <li><input type="checkbox"> Left early from Shabbat and still ate</li>
+  <li><input type="checkbox"> Pretended you knew the melody</li>
+  <li><input type="checkbox"> Forgot it was a Jewish holiday</li>
+  <li><input type="checkbox"> Accidentally scheduled something during a holiday</li>
+  <li><input type="checkbox"> Intentionally scheduled something during a holiday</li>
+  <li><input type="checkbox"> Forgot the words to Hine Ma Tov</li>
+  <li><input type="checkbox"> Forgot words to the long Kiddush</li>
+  <li><input type="checkbox"> Hummed a prayer because you forgot the words</li>
+  <li><input type="checkbox"> Whispered words while watching someone else</li>
+  <li><input type="checkbox"> Asked “what page are we on?”</li>
+  <li><input type="checkbox"> Talked during the d’var</li>
+
+  <li><input type="checkbox"> Been to exactly one Shabbat</li>
+  <li><input type="checkbox"> Been to two Shabbats</li>
+  <li><input type="checkbox"> Been to several Shabbats</li>
+  <li><input type="checkbox"> Been to almost every Shabbat</li>
+  <li><input type="checkbox"> Been to every Shabbat</li>
+
+  <li><input type="checkbox"> Used your phone at a Shabbat dinner</li>
+  <li><input type="checkbox"> Checked texts during a prayer</li>
+  <li><input type="checkbox"> Lit candles after sunset</li>
+  <li><input type="checkbox"> Forgot to light candles entirely</li>
+  <li><input type="checkbox"> Asked “are we allowed to do this?”</li>
+
+  <li><input type="checkbox"> Ate bacon</li>
+  <li><input type="checkbox"> Wondered if you can eat bacon</li>
+  <li><input type="checkbox"> Ate a cheeseburger</li>
+  <li><input type="checkbox"> Took more food than you needed</li>
+  <li><input type="checkbox"> Took food “for later”</li>
+
+  <li><input type="checkbox"> Baked a challah</li>
+  <li><input type="checkbox"> Brought food to Shabbat</li>
+  <li><input type="checkbox"> Took the last piece of challah</li>
+  <li><input type="checkbox"> Took the last of the lox</li>
+  <li><input type="checkbox"> Been to a bagel lunch</li>
+
+  <li><input type="checkbox"> Signed up for the Texas Hillel Summit</li>
+  <li><input type="checkbox"> Already been to the Texas Hillel Summit</li>
+
+  <li><input type="checkbox"> Met a close friend through Hillel</li>
+  <li><input type="checkbox"> Met an ex through Hillel</li>
+  <li><input type="checkbox"> Avoided someone at Hillel</li>
+  <li><input type="checkbox"> Trauma-bonded over Hebrew school</li>
+
+  <li><input type="checkbox"> Went on Birthright</li>
+  <li><input type="checkbox"> Caught feelings on a Jewish trip</li>
+  <li><input type="checkbox"> Heard about trip drama secondhand</li>
+
+  <li><input type="checkbox"> Held a Hillel leadership role</li>
+  <li><input type="checkbox"> Put Hillel on your resume</li>
+  <li><input type="checkbox"> Owned a Hillel shirt</li>
+  <li><input type="checkbox"> Own two or more Hillel shirts</li>
+
+  <li><input type="checkbox"> Taken JLF (Jewish Learning Fellowship)</li>
+  <li><input type="checkbox"> Taken SHL (Shabbat Hosting Lab)</li>
+  <li><input type="checkbox"> Taken Kol Yisrael</li>
+
+  <li><input type="checkbox"> Went to class during the High Holidays</li>
+  <li><input type="checkbox"> Emailed a professor for an excused holiday absence after the deadline</li>
+
+  <li><input type="checkbox"> Brought your parents to Shabbat</li>
+  <li><input type="checkbox"> Brought a non-Jewish friend to Hillel</li>
+  <li><input type="checkbox"> Your non-Jewish friend keeps coming</li>
+
+  <li><input type="checkbox"> Have a Hillel crush</li>
+  <li><input type="checkbox"> Avoided an event because of your crush</li>
+  <li><input type="checkbox"> Went to an event because of your crush</li>
+
+  <li><input type="checkbox"> Katia has bought you coffee</li>
+  <li><input type="checkbox"> Ulrika has bought you coffee</li>
+  <li><input type="checkbox"> Both Katia and Ulrika have bought you coffee</li>
+
+  <li><input type="checkbox"> Took this test too seriously</li>
+  <li><input type="checkbox"> Read this and immediately thought of someone</li>
+</ol>
+
+<button onclick="calculateScore()">Calculate My Score</button>
+
+<div id="score"></div>
+
+<script>
+function calculateScore() {
+  const checkboxes = document.querySelectorAll('#questions input[type="checkbox"]');
+  let checked = 0;
+  checkboxes.forEach(cb => {
+    if (cb.checked) checked++;
+  });
+  const score = 100 - checked;
+  document.getElementById('score').innerHTML =
+    "Your Hillel Rice Purity Score: <strong>" + score + "</strong>";
+}
+</script>
+
+</body>
+</html>
